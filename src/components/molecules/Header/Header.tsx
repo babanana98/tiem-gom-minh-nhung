@@ -1,22 +1,25 @@
-import Typography from '@mui/material/Typography';
-import LogoIcon from '../../atoms/LogoIcon/LogoIcon';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import SearchIcon from '@mui/icons-material/Search';
+import Typography from "@mui/material/Typography";
+import LogoIcon from "../../atoms/LogoIcon/LogoIcon";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+import SearchIcon from "@mui/icons-material/Search";
 
 function Header() {
   return (
     <div>
-      <Typography variant="h6" component="h1">Tiệm Gốm Minh Nhung</Typography>
+      <Typography variant="h6" component="h1">
+        Tiệm Gốm Minh Nhung
+      </Typography>
       <LogoIcon></LogoIcon>
       <Menu
         id="basic-menu"
         open={true}
         MenuListProps={{
-          'aria-labelledby': 'basic-button',
+          "aria-labelledby": "basic-button",
         }}
+        variant="selectedMenu"
       >
         <MenuItem>SẢN PHẨM</MenuItem>
         <MenuItem>GIỚI THIỆU</MenuItem>

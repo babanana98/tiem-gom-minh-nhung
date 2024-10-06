@@ -1,8 +1,9 @@
+import Header from "../../components/molecules/Header";
+
 function HomePage() {
   return (
     <div>
-      <h1>Welcome to Our Store</h1>
-      <p>This is the home page.</p>
+      <Header></Header>
     </div>
   );
 };

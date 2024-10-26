@@ -1,21 +1,55 @@
 import './App.css';
+import { Suspense, lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/home/index";
-import ProductsPage from "./pages/products/index";
-import ProductsIdPage from "./pages/products/_id/index";
 
+// Lazy load pages components
+const HomePage = lazy(() => import("./pages/home"));
+const ProductsIdPage = lazy(() => import("./pages/products/_id"));
+const ContactPage = lazy(() => import("./pages/contact"));
+const FaqPage = lazy(() => import("./pages/faq"));
+const AboutPage = lazy(() => import("./pages/about"));
+
+// create router paths
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: 'products',
-    element: <ProductsPage />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <HomePage />
+      </Suspense>
+    ),
   },
   {
     path: 'products/:id',
-    element: <ProductsIdPage />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <ProductsIdPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: 'contact',
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <ContactPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: 'faq',
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <FaqPage />
+      </Suspense>
+    ),
+  },
+  {
+    path: 'about',
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <AboutPage />
+      </Suspense>
+    ),
   },
 ]);
 
